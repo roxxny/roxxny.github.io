@@ -234,3 +234,26 @@ var BrowserDetect = {
   ]
 
 };
+
+function createChi() {
+    const chi = document.createElement('div');
+    chi.classList.add('fall-item');
+  
+    // 랜덤 위치
+    chi.style.left = Math.random() * window.innerWidth + 'px';
+  
+    // 랜덤 속도
+    chi.style.animationDuration = 3 + Math.random() * 3 + 's'; // 3~6초
+  
+    // body에 추가
+    document.body.appendChild(chi);
+  
+    // 일정 시간 후 제거
+    setTimeout(() => {
+      chi.remove();
+    }, 7000);
+  }
+  
+  // 반복 생성
+  setInterval(createChi, 250); // 생성 간격: 0.25초
+  
